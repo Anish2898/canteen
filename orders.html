@@ -1,0 +1,21 @@
+<h1>Your Orders</h1>
+
+<div id="orders"></div>
+
+<script>
+
+let orders = JSON.parse(localStorage.getItem("orders")) || [];
+
+const container = document.getElementById("orders");
+
+orders.forEach(order=>{
+
+let div = document.createElement("div");
+
+div.innerHTML = "Order Token #" + Math.floor(Math.random()*100);
+
+container.appendChild(div);
+
+});
+
+</script>

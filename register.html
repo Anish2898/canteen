@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Register - College Canteen</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#f4f4f4;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+.register-box{
+
+background:white;
+padding:30px;
+width:350px;
+border-radius:8px;
+box-shadow:0 0 10px rgba(0,0,0,0.2);
+
+}
+
+h2{
+text-align:center;
+}
+
+input{
+width:100%;
+padding:10px;
+margin:10px 0;
+border:1px solid #ccc;
+border-radius:5px;
+}
+
+button{
+
+width:100%;
+padding:10px;
+background:#007bff;
+color:white;
+border:none;
+border-radius:5px;
+cursor:pointer;
+
+}
+
+button:hover{
+background:#0056b3;
+}
+
+p{
+text-align:center;
+}
+
+a{
+color:#007bff;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="register-box">
+
+<h2>Create Account</h2>
+
+<form onsubmit="registerUser(event)">
+
+<input type="text" id="name" placeholder="Full Name" required>
+
+<input type="email" id="email" placeholder="College Email" required>
+
+<input type="password" id="password" placeholder="Password" required>
+
+<button type="submit">Register</button>
+
+</form>
+
+<p>Already have an account? <a href="login.html">Login</a></p>
+
+</div>
+
+<script>
+
+function registerUser(e){
+
+e.preventDefault();
+
+let name=document.getElementById("name").value;
+let email=document.getElementById("email").value;
+let password=document.getElementById("password").value;
+
+let user={name,email,password};
+
+localStorage.setItem("user",JSON.stringify(user));
+
+alert("Registration Successful");
+
+window.location.href="login.html";
+
+}
+
+</script>
+
+</body>
+
+</html>
